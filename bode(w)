@@ -1,19 +1,37 @@
 from control.matlab import *
 import matplotlib.pyplot as plt
 num= [4,0]
-den= [1]
+den= [1,0.0000000000000001]
 w= tf(num, den)
 mag, phase, omega = bode(w, dB=False)
+plt.title('ЛАЧХ и ЛАФЧХ безинерционного звена')
 plt.plot()
 plt.show()
-#num=[6,0]
-#den=[1,1]
-
-#num=[1]
-#den=[5,0]
-
-#num=[2,0]
-#den=[1]
-
-#num=[6,0]
-#den=[5,1]
+num1= [6,0]
+den1= [1,1]
+w1= tf(num1, den1)
+mag1, phase1, omega1 = bode(w1, dB=False)
+plt.title('ЛАЧХ и ЛАФЧХ апериодического звена')
+plt.plot()
+plt.show()
+num3= [1]
+den3= [5,0]
+w3= tf(num3, den3)
+mag3, phase3, omega3 = bode(w3, dB=False)
+plt.title('ЛАЧХ и ЛАФЧХ интегрирующего звена')
+plt.plot()
+plt.show()
+num4= [2,0]
+den4= [1,0.000000000000001]
+w4= tf(num4, den4)
+mag4, phase4, omega4 = bode(w4, dB=False)
+plt.title('ЛАЧХ и ЛАФЧХ идеального диф. звена')
+plt.plot()
+plt.show()
+num5= [6,0]
+den5= [5,1]
+w5= tf(num5, den5)
+mag5, phase5, omega5 = bode(w5, dB=False)
+plt.title('ЛАЧХ и ЛАФЧХ реального диф. звена')
+plt.plot()
+plt.show()
