@@ -1,0 +1,30 @@
+from control.matlab import *
+import matplotlib.pyplot as plt
+num= [2,0]
+den= [1,0.0000000000000001]
+w= tf(num, den)
+#[x1,y1]=step(w)
+#[x2,y2]=step(w)
+#.plot(x1,y1,'color',x2,y2,'color')
+
+Timeline=[]
+for i in range (0,3000):
+    Timeline.append(i/1000)
+[y,x]=step(w,Timeline)
+plt.plot(x,y,"b")
+plt.title('Step Response ')
+plt.ylabel('Amplitude')
+plt.xlabel('Time(sec)')
+plt.grid(True)
+plt.show()
+#num=[6,0]
+#den=[1,1]
+
+#num=[1]
+#den=[5,0]
+
+#num=[2,0]
+#den=[1]
+
+#num=[6,0]
+#den=[5,1]
