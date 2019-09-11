@@ -1,0 +1,19 @@
+from control.matlab import *
+import matplotlib.pyplot as plt
+num= [4,0]
+den= [1]
+w= tf(num, den)
+mag, phase, omega = bode(w, dB=False)
+plt.plot()
+plt.show()
+#num=[6,0]
+#den=[1,1]
+
+#num=[1]
+#den=[5,0]
+
+#num=[2,0]
+#den=[1]
+
+#num=[6,0]
+#den=[5,1]
