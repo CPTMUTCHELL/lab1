@@ -1,9 +1,10 @@
 from control.matlab import *
 import matplotlib.pyplot as plt
-num= [4,0]
-den= [1,0.0000000000000001]
+#неверно
+num= [4]
+den= [1]
 w= tf(num, den)
-num1= [6,0]
+num1= [6]
 den1= [1,1]
 w1= tf(num1, den1)
 Timeline=[]
@@ -27,15 +28,16 @@ plt.ylabel('Амплитуда')
 plt.xlabel('Время(с)')
 plt.grid(True)
 plt.show()
+#неверно
 num4= [2,0]
-den4= [1,0.0000000000000001]
+den4= [1,0.0000000001]
 w4= tf(num4, den4)
 num5= [6,0]
 den5= [5,1]
 w5= tf(num5, den5)
 Timeline4=[]
 for i4 in range (0,3000):
-    Timeline4.append(i4/1000)
+    Timeline4.append(i4/100)
 y4,x4=step(w4,Timeline4)
 y5,x5=step(w5,Timeline4)
 plt.plot(x4,y4,"b",x5,y5,'g')
