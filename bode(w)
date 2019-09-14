@@ -1,13 +1,13 @@
 from control.matlab import *
 import matplotlib.pyplot as plt
-num= [4,0]
-den= [1,0.0000000000000001]
+num= [4]
+den= [1]
 w= tf(num, den)
 mag, phase, omega = bode(w, dB=False)
 plt.title('ЛАЧХ и ЛАФЧХ безинерционного звена')
 plt.plot()
 plt.show()
-num1= [6,0]
+num1= [6]
 den1= [1,1]
 w1= tf(num1, den1)
 mag1, phase1, omega1 = bode(w1, dB=False)
@@ -22,7 +22,7 @@ plt.title('ЛАЧХ и ЛАФЧХ интегрирующего звена')
 plt.plot()
 plt.show()
 num4= [2,0]
-den4= [1,0.000000000000001]
+den4= [1]
 w4= tf(num4, den4)
 mag4, phase4, omega4 = bode(w4, dB=False)
 plt.title('ЛАЧХ и ЛАФЧХ идеального диф. звена')
