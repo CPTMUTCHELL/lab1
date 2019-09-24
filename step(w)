@@ -1,11 +1,11 @@
 from control.matlab import *
 import matplotlib.pyplot as plt
-#неверно
-num= [4]
+from scipy import misc
+num= [2]
 den= [1]
 w= tf(num, den)
-num1= [6]
-den1= [1,1]
+num1= [3]
+den1= [0.5,1]
 w1= tf(num1, den1)
 Timeline=[]
 for i in range (0,3000):
@@ -13,36 +13,43 @@ for i in range (0,3000):
 y,x=step(w,Timeline)
 y1,x1=step(w1,Timeline)
 plt.plot(x,y,"b",x1,y1,'g')
-plt.title('Переходная функция безынерционного и апериодического звена ')
-plt.ylabel('Амплитуда')
-plt.xlabel('Время(с)')
+plt.title('Переходная функция безынерционного и апериодического звена  ')
+plt.ylabel('Амплитуда h(t)')
+plt.xlabel('t, (с)')
 plt.grid(True)
 plt.show()
-num3= [1]
-den3= [5,0]
+num3= [0.5]
+den3= [1,0]
 w3= tf(num3, den3)
 y3,x3=step(w3)
 plt.plot(x3,y3,"r")
 plt.title('Переходная функция интегрального звена ')
-plt.ylabel('Амплитуда')
-plt.xlabel('Время(с)')
+plt.ylabel('Амплитуда h(t)')
+plt.xlabel('t(с)')
 plt.grid(True)
 plt.show()
-#неверно
-num4= [2,0]
-den4= [1,0.0000000001]
+num4= [1,0.000000000001]
+den4= [0.0000000000001,1]
 w4= tf(num4, den4)
+y4,x4=step(w4)
+plt.plot(x4,y4,"b")
+plt.title('Переходная функция идеального диф. звена ')
+plt.ylabel('Амплитуда h(t)')
+plt.xlabel('t (с)')
+plt.grid(True)
+plt.show()
 num5= [6,0]
 den5= [5,1]
 w5= tf(num5, den5)
-Timeline4=[]
-for i4 in range (0,3000):
-    Timeline4.append(i4/100)
-y4,x4=step(w4,Timeline4)
-y5,x5=step(w5,Timeline4)
-plt.plot(x4,y4,"b",x5,y5,'g')
-plt.title('Переходная функция идеального и реального диф. звена ')
-plt.ylabel('Амплитуда')
-plt.xlabel('Время(с)')
+num6=[3,0]
+den6=[2.5,1]
+w6= tf(num6, den6)
+y5,x5=step(w5)
+y6,x6=step(w6)
+plt.plot(x5,y5,"b",x6,y6,'g')
+plt.title('Переходные функции реального диф. звена ')
+plt.ylabel('Амплитуда h(t)')
+plt.xlabel('t (с)')
 plt.grid(True)
 plt.show()
+
